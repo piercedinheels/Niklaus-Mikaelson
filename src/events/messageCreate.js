@@ -12,6 +12,7 @@ import { getCommandPrefix, getBotMessage, isBotOwner, isCommandCategoryEnabled, 
 import { enforceAbuseProtection, formatCooldownDuration } from '../utils/abuseProtection.js';
 import { createEmbed } from '../utils/embeds.js';
 import { isCommandEnabled } from '../services/commandAccessService.js';
+import { getKlausReply } from '../services/klausAI.js';
 import {
   getCountingGameConfig,
   saveCountingGameConfig,
