@@ -36,6 +36,7 @@ export default {
         return;
       }
 if (message.mentions.users.has(client.user.id)) {
+  logger.info('Klaus was mentioned! Attempting AI response...');
   try {
     await message.channel.sendTyping();
 
