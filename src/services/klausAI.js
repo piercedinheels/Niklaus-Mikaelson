@@ -89,4 +89,4 @@ async function getKlausReply(userId, username, message) {
   return reply;
 }
 
-module.exports = { getKlausReply };
+exports = { getKlausReply };
