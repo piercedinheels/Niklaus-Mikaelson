@@ -35,7 +35,24 @@ export default {
       if (countingProcessed) {
         return;
       }
+if (message.mentions.users.has(client.user.id)) {
+  try {
+    await message.channel.sendTyping();
 
+    const reply = await getKlausReply(
+      message.author.id,
+      message.member?.displayName || message.author.username,
+      message.content.replace(/<@!?\d+>/g, '').trim()
+    );
+
+    await message.reply(reply);
+  } catch (error) {
+    logger.error('Klaus AI response error:', error);
+    await message.reply(
+      'Do forgive me. It seems I have more pressing matters to attend to.'
+    ).catch(() => {});
+  }
+}
       await handlePrefixCommand(message, client);
 
       await handleLeveling(message, client);
